@@ -1,0 +1,59 @@
+@CHARSET "ISO-8859-1";
+#header{
+	background-color:black;
+	width:100%;
+	height:110px;
+}
+#header_left{
+	background-color:black;
+	width:80%;
+	height:110px;
+	float: left;
+}
+#header_right{
+	background-color:black;
+	width:20%;
+	height:110px;
+	float: left;
+}
+#header_2{
+	background-color:red;
+	width:100%;
+	height:60px;
+}
+#header_2_left{
+	background-color:red;
+	width:80%;
+	height:60px;
+	float: left;
+}
+#header_2_right{
+	background-color:red;
+	width:20%;
+	height:60px;
+	float: left;
+}
+#header_3{
+	background-color:white;
+	width:100%;
+	height:40px;
+	font-size: 30px;
+}
+#center{
+	width:100%;
+	height:550px;
+	background-color:#00000085;
+}
+#Bottom{
+	background-color:black;
+	font-size: 7px;
+	width:100%;
+	height:80px;
+	color: white;
+}
+a{
+	text-decoration:none;
+	color:#fff;
+	padding:5px  20px;
+	border:1px solid #fff;
+}

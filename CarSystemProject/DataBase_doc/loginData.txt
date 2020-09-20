@@ -1,0 +1,63 @@
+drop table login_table_carProject;
+drop sequence login_table_carProject_seq;
+
+create sequence login_table_carProject_seq start with 2001;
+create table login_table_carProject(
+id number(10) primary key,
+name varchar(20) not null,
+login_id varchar(20) not null unique,
+login_password varchar(20) not null check(length(login_password)>=4),
+email varchar(30) not null unique,
+mobile varchar(15) not null unique,
+role varchar(15) default('Guest'),
+created timestamp  default sysdate
+);
+
+insert into login_table_carProject(id,name,login_id,login_password,email,mobile,role)
+values(login_table_carProject_seq.nextval,'Tohid Khokar','khokars','sameer54','tohidkhokar54@gmail.com','7898427247','super admin');
+
+insert into login_table_carProject(id,name,login_id,login_password,email,mobile,role)
+values(login_table_carProject_seq.nextval,'Admin ','Admin54','admin54','admin.carSystem32@gmail.com','6360723931','supere admin');
+
+insert into login_table_carProject(id,name,login_id,login_password,email,mobile,role)
+values(login_table_carProject_seq.nextval,'User_1','User5432','user5432','User.carSystem@gmail.com','9685597370','User');
+
+commit;
+
+select * from login_table_carProject;
+select * from login_table_carProject where login_id='khokars' and login_password='sameer54';
+
+select * from login_table_carProject where login_id=? and login_password=?;
+
+___________________________________________________________________________________________________UserLogin
+
+drop table user_login_carProject;
+drop sequence user_login_carProject_seq;
+
+create sequence user_login_carProject_seq start with 1001;
+create table user_login_carProject(
+id number(10) primary key,
+name varchar(20) not null,
+login_id varchar(20) not null unique,
+login_password varchar(20) not null check(length(login_password)>=4),
+email varchar(30) not null unique,
+mobile varchar(15) not null unique,
+role varchar(15) default('Guest'),
+created timestamp  default sysdate
+);
+
+insert into user_login_carProject(id,name,login_id,login_password,email,mobile,role)
+values(user_login_carProject_seq.nextval,'Tohid Khokar','tohidkhokar','sameer54','tohidkhokar54@gmail.com','7898427247','super admin');
+
+insert into user_login_carProject(id,name,login_id,login_password,email,mobile,role)
+values(user_login_carProject_seq.nextval,'Admin ','Admin54','admin54','admin.carSystem32@gmail.com','6360723931','supere admin');
+
+insert into user_login_carProject(id,name,login_id,login_password,email,mobile,role)
+values(user_login_carProject_seq.nextval,'User_1','User5432','user5432','User.carSystem@gmail.com','9685597370','User');
+
+commit;
+
+select * from user_login_carProject;
+select * from user_login_carProject where login_id='khokars' and login_password='sameer54';
+
+select * from user_login_carProject where login_id=? and login_password=?;

@@ -1,0 +1,26 @@
+drop table modal_table_carProject;
+drop sequence modal_table_carProject_seq;
+
+create sequence modal_table_carProject_seq start with 2001;
+create table modal_table_carProject(
+id number(10) primary key,
+brandName varchar(20) not null,
+modal varchar(20) not null,
+price number(10) not null,
+milage number(10) not null,
+sitting_capasity number(5) not null,
+image blob,
+created timestamp  default sysdate
+);
+
+insert into modal_table_carProject(id,brandName,modal,price,milage,sitting-capasity,image)
+values(modal_table_carProject_seq.nextval,?,?,?,?,?,?);
+
+
+commit;
+
+select * from modal_table_carProject;
+select * from modal_table_carProject where login_id='khokars' and login_password='sameer54';
+
+select * from modal_table_carProject where login_id=? and login_password=?;
+
